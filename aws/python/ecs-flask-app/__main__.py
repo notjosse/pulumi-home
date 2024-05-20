@@ -2,6 +2,8 @@ from pulumi import Config, Output, export
 import pulumi_aws as aws
 import pulumi_awsx as awsx
 
+from deployments import deployment_settings_resource
+
 config = Config()
 container_port = config.get_int("containerPort", 80)
 cpu = config.get_int("cpu", 512)
