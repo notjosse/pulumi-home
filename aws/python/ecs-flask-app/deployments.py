@@ -1,8 +1,10 @@
+import pulumi
 import pulumi_pulumiservice as service
 
-deployment_settings_resource = service.DeploymentSettings("deploymentSettingsResource",
-    organization="josse-pulumi-corp",
-    project="ecs-flask-app",
+deployment_settings_resource = service.DeploymentSettings(
+    "dev-deployment",
+    organization=pulumi.get_organization(),
+    project=pulumi.get_project(),
     source_context=service.DeploymentSettingsSourceContextArgs(
         git=service.DeploymentSettingsGitSourceArgs(
             branch="main",
@@ -10,5 +12,5 @@ deployment_settings_resource = service.DeploymentSettings("deploymentSettingsRes
             repo_dir="aws/python/ecs-flask-app",
         ),
     ),
-    stack="dev",
+    stack=pulumi.get_stack(),
     )
