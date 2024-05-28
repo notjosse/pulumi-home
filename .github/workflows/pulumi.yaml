@@ -1,0 +1,26 @@
+name: Reusable Pulumi Workflow
+
+on:
+  workflow_call:
+    inputs:
+      stack-name:
+        description: 'The name of the stack to operate on'
+        required: true
+        type: string
+    secrets:
+      pulumi-access-token:
+        description: 'The Pulumi access token to use'
+        required: true
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    steps:
+        with:
+          python-version: 3.11.6
+      - run: pip install -r requirements.txt
+      - run: python main.py
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.pulumi-access-token }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_ON_PR: true
