@@ -23,6 +23,7 @@ jobs:
           pip3 install -r requirements.txt
         working-directory: ./aws/python/gh-app-preview-test
       - uses: pulumi/actions@v3
+        working-directory: ./aws/python/gh-app-preview-test
         with:
           command: preview
           stack-name: dev
