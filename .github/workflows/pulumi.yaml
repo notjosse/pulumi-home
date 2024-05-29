@@ -7,6 +7,10 @@ on:
         description: 'The name of the stack to operate on'
         required: true
         type: string
+    secrets:
+      PULUMI_ACCESS_TOKEN:
+        description: 'The Pulumi access token to use'
+        required: true
 
 jobs:
   preview:
