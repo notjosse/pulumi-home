@@ -10,7 +10,7 @@ on:
 
 jobs:
   call-pulumi-workflow:
-    uses: notjosse/pulumi-home/aws/python/gh-app-preview-test/.github/workflows/pulumi.yaml@develop
+    uses: notjosse/pulumi-home/.github/workflows/pulumi.yaml
     with:
       stack-name: dev
     secrets:
