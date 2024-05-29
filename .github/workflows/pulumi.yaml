@@ -7,10 +7,6 @@ on:
         description: 'The name of the stack to operate on'
         required: true
         type: string
-    secrets:
-      PULUMI_ACCESS_TOKEN:
-        description: 'The Pulumi access token to use'
-        required: true
 
 jobs:
   preview:
@@ -40,7 +36,7 @@ jobs:
           comment-on-pr: true
           # github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          PULUMI_ACCESS_TOKEN: inherit
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
       # - name: Pulumi Preview
       #   run: |
       #     pulumi preview
