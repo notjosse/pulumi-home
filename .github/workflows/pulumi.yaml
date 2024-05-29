@@ -34,9 +34,11 @@ jobs:
           pip3 install -r requirements.txt
         working-directory: ./aws/python/gh-app-preview-test
       - uses: pulumi/actions@v3
+        run: |
+          pulumi preview
         working-directory: ./aws/python/gh-app-preview-test
         with:
-          command: preview
+          # command: preview
           stack-name: josse-pulumi-corp/gh-app-preview-test/dev
           comment-on-pr: true
           # github-token: ${{ secrets.GITHUB_TOKEN }}
