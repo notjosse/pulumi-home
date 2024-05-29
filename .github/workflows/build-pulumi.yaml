@@ -1,16 +1,16 @@
-name: Pulumi
+name: Build Pulumi
 
 on:
   push:
-    tags:
-      - '*'
-  pull_request:
-    paths-ignore:
-      - '**/.github/'
+    branches:
+      - develop
+  pull_requests:
+    branches:
+      - main
 
 jobs:
   call-pulumi-workflow:
-    uses: ./.github/workflows/pulumi.yaml
+    uses: ./aws/python/gh-app-preview-test
     with:
       stack-name: dev
     secrets:
