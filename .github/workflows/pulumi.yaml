@@ -36,7 +36,7 @@ jobs:
       - uses: pulumi/actions@v3
         with:
           command: preview
-          stack-name: josse-pulumi-corp/gh-app-preview-test/dev
+          stack-name: josse-pulumi-corp/automation-api-gh-preview-test/dev
           comment-on-pr: true
           work-dir: ./aws/python/automation-api-gh-preview-test
           # github-token: ${{ secrets.GITHUB_TOKEN }}
