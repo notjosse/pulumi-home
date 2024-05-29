@@ -14,4 +14,4 @@ jobs:
     with:
       stack-name: dev
     secrets:
-      pulumi-access-token: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+      PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
