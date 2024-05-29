@@ -35,13 +35,13 @@ jobs:
         working-directory: ./aws/python/gh-app-preview-test
       - uses: pulumi/actions@v3
         with:
-          # command: preview
+          command: preview
           stack-name: josse-pulumi-corp/gh-app-preview-test/dev
           comment-on-pr: true
           # github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           PULUMI_ACCESS_TOKEN: inherit
-      - name: Pulumi Preview
-        run: |
-          pulumi preview
-        working-directory: ./aws/python/gh-app-preview-test
+      # - name: Pulumi Preview
+      #   run: |
+      #     pulumi preview
+      #   working-directory: ./aws/python/gh-app-preview-test
