@@ -4,6 +4,7 @@ import pulumi
 from pulumi import automation as auto
 from pulumi_aws import s3
 
+# testing automation api and pulumi github app
 
 # This is the pulumi program in "inline function" form
 def pulumi_program():
