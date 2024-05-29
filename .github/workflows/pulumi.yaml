@@ -8,7 +8,7 @@ on:
         required: true
         type: string
     secrets:
-      pulumi-access-token:
+      PULUMI_ACCESS_TOKEN:
         description: 'The Pulumi access token to use'
         required: true
 
