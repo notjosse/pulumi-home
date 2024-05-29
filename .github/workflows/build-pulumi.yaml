@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-pulumi-workflow:
-    uses: notjosse/pulumi-home/.github/workflows/pulumi.yaml@develop
+    uses: notjosse/pulumi-home/.github/workflows/pulumi.yaml@automation-api-test
     with:
       stack-name: dev
     secrets:
