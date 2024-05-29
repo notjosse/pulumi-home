@@ -4,7 +4,7 @@ on:
   # push:
   #   branches:
   #     - develop
-  # Test 2
+  # with Pulumi GH App Off
   pull_request:
     branches:
       - main
