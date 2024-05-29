@@ -32,13 +32,13 @@ jobs:
           echo "python pip3 install"
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
-        working-directory: ./aws/python/gh-app-preview-test
+        working-directory: ./aws/python/automation-api-gh-preview-test
       - uses: pulumi/actions@v3
         with:
           command: preview
           stack-name: josse-pulumi-corp/gh-app-preview-test/dev
           comment-on-pr: true
-          work-dir: ./aws/python/gh-app-preview-test
+          work-dir: ./aws/python/automation-api-gh-preview-test
           # github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
