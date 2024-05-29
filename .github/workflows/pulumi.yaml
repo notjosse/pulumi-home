@@ -35,6 +35,7 @@ jobs:
         working-directory: ./aws/python/automation-api-gh-preview-test
       - name: Run Python Command
         run: python main.py preview
+        working-directory: ./aws/python/automation-api-gh-preview-test
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           COMMENT_ON_PR: true
