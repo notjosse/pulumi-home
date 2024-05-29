@@ -56,6 +56,13 @@ if len(args) > 0:
     if args[0] == "destroy":
         destroy = True
 
+# To preview our program, we can run python main.py preview
+preview = False
+args = sys.argv[1:]
+if len(args) > 0:
+    if args[0] == "preview":
+        preview = True
+
 project_name = "automation-api-gh-preview-test"
 # We use a simple stack name here, but recommend using auto.fully_qualified_stack_name for maximum specificity.
 stack_name = "dev"
@@ -87,6 +94,12 @@ if destroy:
     print("destroying stack...")
     stack.destroy(on_output=print)
     print("stack destroy complete")
+    sys.exit()
+
+if preview:
+    print("previewing stack...")
+    prev_res = stack.preview(on_output=print)
+    print(f"preview: \n{json.dumps(prev_res.summary.resource_changes, indent=4)}")
     sys.exit()
 
 print("updating stack...")
