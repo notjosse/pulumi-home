@@ -32,7 +32,6 @@ jobs:
           echo "python pip3 install"
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
-          ls -a ../../../
         working-directory: ./aws/python/automation-api-gh-preview-test
       - name: Run Python Command
         run: |
