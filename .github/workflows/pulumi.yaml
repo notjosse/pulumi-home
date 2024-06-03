@@ -7,7 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      pulumi-access-token:
+      PULUMI_ACCESS_TOKEN:
         description: 'The Pulumi access token to use'
         required: true
       aws-access-key-id:
@@ -54,4 +54,4 @@ jobs:
           work-dir: ./aws/python/gh-app-preview-test
           # github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.pulumi-access-token }}
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
