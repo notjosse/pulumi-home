@@ -19,6 +19,9 @@ on:
       aws-secret-access-key:
         description: 'AWS Credentials secret access key'
         required: true
+      aws-session-token:
+        description: 'AWS Credentials session token'
+        required: true
 jobs:
   preview:
     name: Preview
@@ -33,9 +36,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-region: ${{ secrets.AWS_REGION }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.aws-access-key-id }}
+          aws-region: ${{ secrets.aws-region }}
+          aws-secret-access-key: ${{ secrets.aws-secret-access-key }}
+          aws-session-token: ${{ secrets.aws-session-token }}
       - name: Setup python env
         run: |
           echo "python3 venv setup"
