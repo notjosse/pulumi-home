@@ -16,9 +16,9 @@ jobs:
       aws-region: ${{ secrets.AWS_REGION }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-  # call-automation-api-workflow:
-  #   uses: notjosse/pulumi-home/.github/workflows/automation-api-pulumi.yaml@develop
-  #   with:
-  #     stack-name: dev
-  #   secrets:
-  #     PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+  call-automation-api-workflow:
+    uses: notjosse/pulumi-home/.github/workflows/automation-api-pulumi.yaml@develop
+    with:
+      stack-name: dev
+    secrets:
+      PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
