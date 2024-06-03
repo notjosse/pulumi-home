@@ -1,0 +1,18 @@
+name: Build Pulumi
+
+on:
+  # push:
+  #   branches:
+  #     - develop
+  # with Pulumi GH App
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-pulumi-workflow:
+    uses: notjosse/pulumi-home/.github/workflows/automation-api-pulumi.yaml@main
+    with:
+      stack-name: dev
+    secrets:
+      PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
