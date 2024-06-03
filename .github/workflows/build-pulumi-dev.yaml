@@ -1,11 +1,11 @@
 name: Build Pulumi Dev
 
-on:
-  push:
-    branches:
-      - develop
+# on:
+#   push:
+#     branches:
+#       - develop
 
-jobs:
+# jobs:
   # call-pulumi-workflow:
   #   uses: notjosse/pulumi-home/.github/workflows/pulumi.yaml@develop
   #   with:
