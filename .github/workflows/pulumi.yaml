@@ -10,6 +10,15 @@ on:
       PULUMI_ACCESS_TOKEN:
         description: 'The Pulumi access token to use'
         required: true
+      aws-access-key-id:
+        description: 'AWS Credentials access key id'
+        required: true
+      aws-region:
+        description: 'AWS SSO region'
+        required: true
+      aws-secret-access-key:
+        description: 'AWS Credentials secret access key'
+        required: true
 jobs:
   preview:
     name: Preview
