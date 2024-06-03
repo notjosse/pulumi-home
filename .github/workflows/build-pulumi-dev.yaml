@@ -13,7 +13,7 @@ jobs:
     secrets:
       PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      aws-region: test
+      aws-region: test-1
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   call-automation-api-workflow:
     uses: notjosse/pulumi-home/.github/workflows/automation-api-pulumi.yaml@develop

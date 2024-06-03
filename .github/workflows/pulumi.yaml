@@ -34,7 +34,8 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-region: test
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region-2: test-2
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Setup python env
         run: |
