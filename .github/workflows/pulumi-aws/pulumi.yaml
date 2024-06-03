@@ -20,7 +20,7 @@ on:
         description: 'AWS Credentials secret access key'
         required: true
       aws-session-token:
-        description: 'AWS Credentials secret access key'
+        description: 'AWS Credentials session token'
         required: true
 jobs:
   preview:
