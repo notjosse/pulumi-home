@@ -1,5 +1,4 @@
-name: Automation API Pulumi Preview
-
+name: Pulumi Preview
 on:
   workflow_call:
     inputs:
@@ -11,7 +10,6 @@ on:
       PULUMI_ACCESS_TOKEN:
         description: 'The Pulumi access token to use'
         required: true
-
 jobs:
   preview:
     name: Preview
@@ -32,13 +30,13 @@ jobs:
           echo "python pip3 install"
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt
-        working-directory: ./aws/python/automation-api-gh-preview-test
-      - name: Run Python Command
-        run: |
-          echo "python3 source activate"
-          source venv/bin/activate
-          python main.py preview
-        working-directory: ./aws/python/automation-api-gh-preview-test
+        working-directory: ./aws/python/gh-app-preview-test
+      - uses: pulumi/actions@v3
+        with:
+          command: preview
+          stack-name: josse-pulumi-corp/gh-app-preview-test/dev
+          comment-on-pr: true
+          work-dir: ./aws/python/gh-app-preview-test
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
-          COMMENT_ON_PR: true
