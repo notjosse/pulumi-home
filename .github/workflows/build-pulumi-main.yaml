@@ -1,4 +1,4 @@
-name: Build Pulumi
+name: Build Pulumi Main
 
 on:
   push:
