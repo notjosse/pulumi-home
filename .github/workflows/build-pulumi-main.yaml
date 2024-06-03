@@ -1,9 +1,14 @@
 name: Build Pulumi Main
 
 on:
-  pull_request:
+  push:
     branches:
       - main
+  pull_request:
+    types:
+      - closed
+    branches:
+      - develop
 
 jobs:
   call-pulumi-workflow:
