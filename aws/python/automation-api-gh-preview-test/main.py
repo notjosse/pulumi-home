@@ -99,7 +99,7 @@ if destroy:
 if preview:
     print("previewing stack...")
     prev_res = stack.preview(on_output=print)
-    print(f"preview: \n{json.dumps(prev_res.summary.resource_changes, indent=4)}")
+    print(f"preview: \n{json.dumps(prev_res.change_summary, indent=4)}")
     sys.exit()
 
 print("updating stack...")
