@@ -8,7 +8,7 @@ on:
     branches:
       - main
 
-jobs:
+# jobs:
   # call-pulumi-workflow:
   #   uses: notjosse/pulumi-home/.github/workflows/pulumi.yaml@main
   #   with:
