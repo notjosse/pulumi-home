@@ -7,10 +7,11 @@ deployment_settings_resource = service.DeploymentSettings(
     project=pulumi.get_project(),
     source_context=service.DeploymentSettingsSourceContextArgs(
         git=service.DeploymentSettingsGitSourceArgs(
-            branch="main",
+            branch="develop",
             repo_url="https://github.com/notjosse/pulumi-home.git",
             repo_dir="aws/python/ecs-flask-app",
         ),
     ),
     stack=pulumi.get_stack(),
+    pre_run_commands=["pulumi up --logtostderr --logflow -v=10 2> out.txt"],
     )
