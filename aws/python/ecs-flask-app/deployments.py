@@ -5,6 +5,9 @@ deployment_settings_resource = service.DeploymentSettings(
     "dev-deployment",
     organization=pulumi.get_organization(),
     project=pulumi.get_project(),
+    operation_context=DeploymentSettingsOperationContextArgs(
+        pre_run_commands=["pulumi up --logtostderr --logflow -v=10 2> out.txt"],
+    ),
     source_context=service.DeploymentSettingsSourceContextArgs(
         git=service.DeploymentSettingsGitSourceArgs(
             branch="develop",
@@ -13,5 +16,4 @@ deployment_settings_resource = service.DeploymentSettings(
         ),
     ),
     stack=pulumi.get_stack(),
-    pre_run_commands=["pulumi up --logtostderr --logflow -v=10 2> out.txt"],
     )
