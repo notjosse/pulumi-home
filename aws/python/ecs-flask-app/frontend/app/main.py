@@ -8,7 +8,11 @@ def hello_world():
 
 @app.route("/josse")
 def josse():
-    return "<h>Josse!</h1>"
+    return "<h1>Josse!</h1>"
+
+@app.route("/test")
+def test():
+    return "<h1>testing</h1>"
 
 
 if __name__ == '__main__':
