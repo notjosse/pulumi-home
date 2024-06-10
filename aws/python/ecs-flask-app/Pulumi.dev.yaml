@@ -3,3 +3,5 @@ config:
   pulumi-flask-app-infra:containerPort: "80"
   pulumi-flask-app-infra:cpu: "512"
   pulumi-flask-app-infra:memory: "128"
+environment:
+  - aws-dev-stacks
