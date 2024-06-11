@@ -1,0 +1,5 @@
+config:
+  azure-native:location: eastus
+  azure-test-alkira:deploy_resources: true
+environment:
+  - azure-dev-stacks
