@@ -61,3 +61,4 @@ jobs:
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           COMMENT_ON_PR: true
+          WORK_DIR: ./aws/python/automation-api-gh-preview-test
