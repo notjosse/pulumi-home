@@ -11,22 +11,6 @@ import os
 # This is the pulumi program in "inline function" form
 def pulumi_program():
 
-    # Load Pulumi ESC env for aws
-    accessToken = os.getenv("PULUMI_ACCESS_TOKEN")
-    orgName = pulumi.get_organization()
-    configuration = esc.Configuration(access_token=accessToken)
-    client = esc.EscClient(configuration)
-
-    envName = "aws-dev-stacks"
-
-    env, values, yaml = client.open_and_read_environment(orgName, envName)
-
-    # Set AWS ENV Variables retireved from our Pulumi ESC Env
-    os.environ["AWS_ACCESS_KEY_ID"] = values["environmentVariables"]["AWS_ACCESS_KEY_ID"]
-    os.environ["AWS_SECRET_ACCESS_KEY"] = values["environmentVariables"]["AWS_SECRET_ACCESS_KEY"]
-    os.environ["AWS_SESSION_TOKEN"] = values["environmentVariables"]["AWS_SESSION_TOKEN"]
-
-
     # Create a bucket and expose a website index document
     site_bucket = s3.Bucket("s3-website-bucket", website=s3.BucketWebsiteArgs(index_document="index.html"))
     index_content = """
