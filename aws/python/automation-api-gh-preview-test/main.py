@@ -3,8 +3,6 @@ import json
 import pulumi
 from pulumi import automation as auto
 from pulumi_aws import s3
-import pulumi_esc_sdk as esc
-import os
 
 # testing automation api and pulumi github app
 
