@@ -11,18 +11,18 @@ on:
       PULUMI_ACCESS_TOKEN:
         description: 'The Pulumi access token to use'
         required: true
-      aws-access-key-id:
-        description: 'AWS Credentials access key id'
-        required: true
-      aws-region:
-        description: 'AWS SSO region'
-        required: true
-      aws-secret-access-key:
-        description: 'AWS Credentials secret access key'
-        required: true
-      aws-session-token:
-        description: 'AWS Credentials session token'
-        required: true
+      # aws-access-key-id:
+      #   description: 'AWS Credentials access key id'
+      #   required: true
+      # aws-region:
+      #   description: 'AWS SSO region'
+      #   required: true
+      # aws-secret-access-key:
+      #   description: 'AWS Credentials secret access key'
+      #   required: true
+      # aws-session-token:
+      #   description: 'AWS Credentials session token'
+      #   required: true
 
 jobs:
   preview:
@@ -35,13 +35,13 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.11.6"
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.aws-access-key-id }}
-          aws-region: ${{ secrets.aws-region }}
-          aws-secret-access-key: ${{ secrets.aws-secret-access-key }}
-          aws-session-token: ${{ secrets.aws-session-token }}
+      # - name: Configure AWS Credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.aws-access-key-id }}
+      #     aws-region: ${{ secrets.aws-region }}
+      #     aws-secret-access-key: ${{ secrets.aws-secret-access-key }}
+      #     aws-session-token: ${{ secrets.aws-session-token }}
       - name: Setup python env
         run: |
           echo "python3 venv setup"
