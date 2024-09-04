@@ -1,0 +1,10 @@
+config:
+  aws:region: us-east-1
+  main:users:
+    - user1
+    - user2
+    - user3
+  pulumi-vs-tf-demo:mySecret:
+    secure: AAABAKHHk7vuortHAtuBPGORdjNbScXVA8r997GWrdsC/kkFUQJlwcXLMOI=
+environment:
+  - aws-dev-stacks

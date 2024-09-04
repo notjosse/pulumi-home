@@ -1,0 +1,11 @@
+name: pulumi-vs-tf-demo
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: An EKS cluster with component resources
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
